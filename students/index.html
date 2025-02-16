@@ -6,52 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      //создаем пустой массив
-      const grades = new Array(12);
-
-      //заполняем его рандомными значениями от 1 до 100
-      for (let i = 0; i < grades.length; i++) {
-        grades[i] = 1 + Math.floor(Math.random() * 100);
-      }
-
-      console.log(grades);
-
-      //рассчитываем средний балл
-      const getAverageGrade = () => {
-        let sum = 0;
-        grades.forEach((item) => (sum += item));
-        console.log(sum);
-        const averageGrade = Math.round(sum / grades.length);
-        console.log(averageGrade);
-      };
-      getAverageGrade();
-
-      //находим максимальное значение
-      const getMaxGrade = () => {
-        grades.sort((a, b) => a - b);
-        console.log(grades);
-        // console.log(grades[grades.length - 1]);
-        const maxGrade = grades.pop();
-        console.log(maxGrade);
-      };
-      getMaxGrade();
-
-      //находим минимальное значение 1й способ
-      // const getMinGrade = () => {
-      //   grades.sort((a, b) => b - a);
-      //   console.log(grades);
-      //   console.log(grades.pop());
-      // };
-      // getMinGrade();
-
-      //находим минимальное значение 2й способ
-      const getMinGrade = () => {
-        grades.sort((a, b) => a - b);
-        console.log(grades);
-        // console.log(grades.shift());
-      };
-      getMinGrade();
-    </script>
+    <ul id="list"></ul>
+    <script src="index.js"></script>
   </body>
 </html>
