@@ -44,7 +44,7 @@ const filmDirectors =
     },
   ];
 
- //список режиссеров  
+//список режиссеров  
 const list = document.querySelector(".list");
 
 //заносим в список инфу о режиссерах
@@ -65,17 +65,17 @@ filmDirectors.forEach((item) => {
   listItem.append(filmography);
   filmography.href = item.films; 
   filmography.textContent = "Фильмография";
-
 });
 
 //создаем подборку лучших фильмов
 const titleTopFilms = document.createElement("h2");
-  list.after(titleTopFilms);
-  titleTopFilms.setAttribute("class", "title");
-  titleTopFilms.textContent = "Лучшие фильмы этих режиссеров";
+list.after(titleTopFilms);
+titleTopFilms.setAttribute("class", "title");
+titleTopFilms.textContent = "Лучшие фильмы этих режиссеров";
 
-  const topFilmsList = filmDirectors.map((item) => {
-    const topFilmsWrap = document.createElement("div");
-    titleTopFilms.after(topFilmsWrap);
-    topFilmsWrap.innerText = item.top_rated_film;
-  });
+const topFilmsList = filmDirectors.map((item) => {
+  return item.top_rated_film;
+});
+const topFilmsWrap = document.createElement("div");
+titleTopFilms.after(topFilmsWrap);
+topFilmsWrap.innerText = topFilmsList.join(", ");
